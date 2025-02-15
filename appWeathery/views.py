@@ -49,9 +49,9 @@ def update_map(request):
         humidity = float(datas_weather['main']['humidity'])
         
         if humidity > 60:
-            send_command("LED_ON")
+            send_command("LED_GREEN")
         else:
-            send_command("LED_OFF")
+            send_command("LED_RED")
             
 
         response = JsonResponse({'lat': lat, 'lng': lng, 'weather_info': weather_info})
